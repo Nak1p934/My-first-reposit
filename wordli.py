@@ -91,6 +91,4 @@ def play(a):
          if b in a:
                guessed_letters.append(b.upper())
                print(f"Молодец, буква угаданна! Количество букв в слове:{a.count(b)}")
-               
-
 play(a)
