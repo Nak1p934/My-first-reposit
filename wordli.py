@@ -80,13 +80,17 @@ def play(a):
     guessed = False
     guessed_letters = []
     guessed_words = []
-    tries = 6                
+    tries = 6 
     print("Давайте играть в угадайку слов")
-    display_hangman(tries)
-    print(word_completion)
-    b = input()
-    if len(b) == 1 and b.isalpha():
-        if b in a:
-            guessed_letters.append(b.upper())
-            print(f"Количество букв в слове:{a.count(b)}")
+    while not guessed and tries > 0:               
+      print(display_hangman(tries))
+      print(word_completion)
+      b = input()
+      if len(b) == 1 and b.isalpha():
+         b = b.lower()
+         if b in a:
+               guessed_letters.append(b.upper())
+               print(f"Молодец, буква угаданна! Количество букв в слове:{a.count(b)}")
+               
+
 play(a)
