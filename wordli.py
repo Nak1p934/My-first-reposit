@@ -105,7 +105,7 @@ def play(a):
       elif len(b) == len(a) and b.isalpha():
          b = b.lower
          if b == a:
-            print(f"Ура, вы угодали слово: {a}")
+            print(f"Ура, вы угодали слово: .{a}.        .{b}.")
             break
          else:
             print("Вы не угодали слово", a)
