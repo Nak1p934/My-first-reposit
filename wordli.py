@@ -97,7 +97,7 @@ def play(a):
             ee.insert(e, b)
             del ee[e + 1]
             word_completion = "".join(ee)
-            ee =[]
+            ee = []
          elif b in guessed_letters:
             print("Вы уже вводили эту букву")
          else:
