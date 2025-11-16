@@ -94,6 +94,9 @@ def play(a):
             print(f"Молодец, буква угаданна! Количество букв в слове:{a.count(b)}")
             ee.extend(word_completion)
             e = a.index(b)
+            ee.insert(e, b)
+            del ee[e + 1]
+            word_completion = "".join(ee)
          elif b in guessed_letters:
             print("Вы уже вводили  жту букву")
          else:
@@ -105,9 +108,9 @@ def play(a):
             print(f"Ура, вы угодали слово: {a}")
             break
          else:
-            print("Вы не угодали слово")
+            print("Вы не угодали слово", a)
             tries -= 1
       else:
-         print("Ошибка ввода попробуйте ещё раз. Нужно ввести букву или всё слово")
+         print("Ошибка ввода попробуйте ещё раз. Нужно ввести букву или всё слово", a)
 
 play(a)
