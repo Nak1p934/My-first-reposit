@@ -1,6 +1,7 @@
 import random
 word_list = ["солце", "море", "горы"]
 a = random.choice(word_list)
+ee = []
 # функция получения текущего состояния
 def display_hangman(tries):
     stages = [  # финальное состояние: голова, торс, обе руки, обе ноги
@@ -88,7 +89,25 @@ def play(a):
       b = input()
       if len(b) == 1 and b.isalpha():
          b = b.lower()
-         if b in a:
-               guessed_letters.append(b.upper())
-               print(f"Молодец, буква угаданна! Количество букв в слове:{a.count(b)}")
+         if b in a and b not in guessed_letters:
+            guessed_letters.append(b)
+            print(f"Молодец, буква угаданна! Количество букв в слове:{a.count(b)}")
+            ee.extend(word_completion)
+            e = a.index(b)
+         elif b in guessed_letters:
+            print("Вы уже вводили  жту букву")
+         else:
+            print("Данной буквы нет в слове")
+            tries -= 1
+      elif len(b) == len(a) and b.isalpha():
+         b = b.lower
+         if b == a:
+            print(f"Ура, вы угодали слово: {a}")
+            break
+         else:
+            print("Вы не угодали слово")
+            tries -= 1
+      else:
+         print("Ошибка ввода попробуйте ещё раз. Нужно ввести букву или всё слово")
+
 play(a)
