@@ -86,7 +86,7 @@ def play(a):
     while not guessed and tries > 0:               
       print(display_hangman(tries))
       print(word_completion)
-      b = input()
+      b = input("Введите букву:\n")
       if len(b) == 1 and b.isalpha():
          b = b.lower()
          if b in a and b not in guessed_letters:
@@ -97,8 +97,9 @@ def play(a):
             ee.insert(e, b)
             del ee[e + 1]
             word_completion = "".join(ee)
+            ee =[]
          elif b in guessed_letters:
-            print("Вы уже вводили  эту букву")
+            print("Вы уже вводили эту букву")
          else:
             print("Данной буквы нет в слове")
             tries -= 1
