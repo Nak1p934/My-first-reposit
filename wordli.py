@@ -98,17 +98,18 @@ def play(a):
             del ee[e + 1]
             word_completion = "".join(ee)
          elif b in guessed_letters:
-            print("Вы уже вводили  жту букву")
+            print("Вы уже вводили  эту букву")
          else:
             print("Данной буквы нет в слове")
             tries -= 1
       elif len(b) == len(a) and b.isalpha():
          b = b.lower()
          if b == a:
-            print(f"Ура, вы угодали слово: .{a}.        .{b}.")
+            print(f"Ура, вы угодали слово: {a}")
             break
          else:
-            print(f"Вы не угодали слово  .{a}.   .{b}.")
+            print("Вы не угодали слово")
+            guessed_words.append(b)
             tries -= 1
       else:
          print("Ошибка ввода попробуйте ещё раз. Нужно ввести букву или всё слово", a)
