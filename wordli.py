@@ -77,6 +77,7 @@ def display_hangman(tries):
     ]
     return stages[tries]
 def play(a):
+    global ee
     word_completion = '_' * len(a)
     guessed = False
     guessed_letters = []
