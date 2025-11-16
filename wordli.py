@@ -103,7 +103,7 @@ def play(a):
             print("Данной буквы нет в слове")
             tries -= 1
       elif len(b) == len(a) and b.isalpha():
-         b = b.lower
+         b = b.lower()
          if b == a:
             print(f"Ура, вы угодали слово: .{a}.        .{b}.")
             break
