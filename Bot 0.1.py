@@ -4,7 +4,7 @@ from aiogram import F
 
 import asyncio
 
-TOKEN_API = "твой токен"
+TOKEN_API = "8417220012:AAFKjrPX0pKLdrp6uj_aPOrQV9m1E8EVQqc"
 
 bot = Bot(TOKEN_API)
 dp = Dispatcher()
