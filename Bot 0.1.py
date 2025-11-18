@@ -1,6 +1,6 @@
 from aiogram import Bot, Dispatcher
 from aiogram.types import Message
-from aiogram.filters import CommandStart
+from aiogram.filters import CommandStart, Command
 import asyncio
 bot = "8417220012:AAFKjrPX0pKLdrp6uj_aPOrQV9m1E8EVQqc"
 dp = Dispatcher()
@@ -14,7 +14,9 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
+@dp.message(Command("place"))
+async def place(message: Message):
+    await message.answer("IP: 333.222.111.000")
 
 
 
