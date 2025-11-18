@@ -1,4 +1,4 @@
-from aiogram import Bot, Dispatcher, executor, types
+from aiogram import Bot, Dispatcher, executer, types
 
 TOKEN_API = "8417220012:AAFKjrPX0pKLdrp6uj_aPOrQV9m1E8EVQqc"
 bot = Bot(TOKEN_API)
@@ -10,4 +10,4 @@ async def send_welcome(message: types.Message):
 
 
 if __name__ == '__main__':
-    executor.start_polling(dp)
+    executer.start_polling(dp)
