@@ -1,15 +1,20 @@
-from aiogram import Bot, Dispatcher, types
-from aiogram.utils import executor
+from aiogram import Bot, Dispatcher
+from aiogram.types import Message
+from aiogram import F
 
-TOKEN_API = "8417220012:AAFKjrPX0pKLdrp6uj_aPOrQV9m1E8EVQqc"
+import asyncio
+
+TOKEN_API = "твой токен"
+
 bot = Bot(TOKEN_API)
-dp = Dispatcher(bot)
+dp = Dispatcher()
 
-@dp.message_handler()
-async def send_welcome(message: types.Message):
-    await message.reply("Hello! I'm your friendly bot. How can I assist you today?")
+@dp.message(F.text)   # фильтр текста
+async def send_welcome(message: Message):
+    await message.answer("Hello! I'm your friendly bot. How can I assist you today?")
 
+async def main():
+    await dp.start_polling(bot)
 
-if __name__ == '__main__':
-    executor.start_polling(dp)
-
+if __name__ == "__main__":
+    asyncio.run(main())
