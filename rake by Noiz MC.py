@@ -2,6 +2,7 @@ import sys
 from time import sleep 
 import time
 import random
+from colorama import Fore
 
 def song():
     words = [("0", 300),
@@ -50,13 +51,13 @@ def song():
              ("0", 670)
              ]
 
-    delays = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 3, 2, 2, 2, 3, 0, 0, 0]
+    delays = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 1, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 3, 2, 2, 2, 3, 0, 0, 0]
     for i, (word, char_delay) in enumerate(words):
         if word == "0":
             glitch_loading("               ", char_delay)
         else:
             for char in word:
-                print(char, end="")
+                print(Fore.BLUE + char, end="")
                 sys.stdout.flush()
                 sleep(char_delay)
             time.sleep(delays[i])
@@ -64,9 +65,10 @@ def song():
 
 def glitch_loading(text="               ", cycles=60):
     chars = "█▓▒░■□#@%&*"
-    
+    colors = [Fore.RED, Fore.GREEN, Fore.YELLOW, Fore.BLUE, Fore.MAGENTA, Fore.CYAN, Fore.WHITE]
+
     for _ in range(cycles):
-        rand = "".join(random.choice(chars) for _ in range(len(text)))
+        rand = "".join(random.choice(colors) + random.choice(chars) for _ in range(len(text)))
         print("\r" + rand, end="")
         sys.stdout.flush()
         sleep(0.1)
@@ -74,5 +76,16 @@ def glitch_loading(text="               ", cycles=60):
     print("\r" + text)
 
 
-print("Noize MC -- Грабли")
+print(Fore.BLUE + "Noize MC -- Грабли")
 song()
+
+# add colors from colorama (pip install colorama)
+# use next program to get time delay for each simbol in line
+#while True:
+#    a, b = int(input()), input()
+#    print(a / len(b))
+# last 8 lines in song vary bad, but i`m too lazy to fix it now
+# happy new year! 2026
+# links:
+# video clip: https://youtu.be/UKxfpyYbh_4?si=idByJdQ2R6ExLT8A
+# lyrics: https://genius.com/Noize-mc-rake-lyrics
