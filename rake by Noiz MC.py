@@ -3,7 +3,7 @@ from time import sleep
 import time
 import random
 from colorama import Fore
-
+import pygame
 def song():
     words = [("0", 300),
              ("В этом году я вёд себя плохо", 0.07142857142857142),
@@ -77,8 +77,10 @@ def glitch_loading(text="               ", cycles=60):
 
 
 print(Fore.BLUE + "Noize MC -- Грабли")
+pygame.mixer.init()
+pygame.mixer.music.load("Noise_MC_-_Grabli_73486106.mp3")
+pygame.mixer.music.play()
 song()
-
 # add colors from colorama (pip install colorama)
 # use next program to get time delay for each simbol in line
 #while True:
@@ -89,3 +91,6 @@ song()
 # links:
 # video clip: https://youtu.be/UKxfpyYbh_4?si=idByJdQ2R6ExLT8A
 # lyrics: https://genius.com/Noize-mc-rake-lyrics
+# P. S.
+# add audio(honestly ChatGPT helped me. Idk how to do it)
+# all works so shit
