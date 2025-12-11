@@ -18,18 +18,7 @@ def lights():
                 else:
                     print(simbol, end = "")
             print()
-        sleep(0.3)
+        sleep(0.7)
         os.system("cls") 
 
-
-
-    '''
-    for j in range(30):
-        print("\r")
-        for i in tree:
-            if i == "*" or i == "|" or i == "#":
-                print(random.choice(colors) + i, end = "")
-            else:
-                print(i, end = "")
-    sys.stdout.flush()'''
 lights()
